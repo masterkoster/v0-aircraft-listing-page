@@ -14,9 +14,9 @@ export default function LandingPage() {
       <main>
         <HeroSection />
         <FeaturedListings />
+        <SellCtaSection />
         <CategoriesSection />
         <WhySection />
-        <SellCtaSection />
         <TestimonialsSection />
       </main>
       <FooterSection />

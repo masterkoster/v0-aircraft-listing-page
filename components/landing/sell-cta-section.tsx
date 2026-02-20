@@ -1,84 +1,43 @@
-import Image from "next/image"
-import { ArrowRight, TrendingUp, Eye, Zap } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Fuel, Clock, MapPin, Users } from "lucide-react"
 
-const benefits = [
-  { icon: Eye, text: "Reach 15,000+ active buyers" },
-  { icon: TrendingUp, text: "Average 23% faster sale" },
-  { icon: Zap, text: "List in under 5 minutes" },
+const stats = [
+  { icon: Fuel, value: "48,200+", label: "Fuel prices tracked" },
+  { icon: MapPin, label: "US airports covered", value: "5,400+" },
+  { icon: Users, label: "Pilots on the platform", value: "2,400+" },
+  { icon: Clock, label: "Avg. saved per fill-up", value: "$38" },
 ]
 
 export function SellCtaSection() {
   return (
-    <section id="sell" className="border-y border-border bg-card/50 py-20 lg:py-28">
+    <section className="border-y border-border bg-card/30 py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
-          {/* Image Side */}
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-border">
-            <Image
-              src="/images/listing-cirrus-vision.jpg"
-              alt="Cirrus Vision SF50 personal jet in flight"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6">
-              <div className="rounded-xl border border-border/50 bg-background/70 p-4 backdrop-blur-lg">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-xs text-muted-foreground">Average Days to Sale</p>
-                    <p className="mt-1 font-mono text-2xl font-bold text-foreground">18 days</p>
-                  </div>
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/15 text-primary">
-                    <TrendingUp className="h-5 w-5" />
-                  </div>
-                </div>
+        <div className="text-center">
+          <p className="text-sm font-semibold uppercase tracking-wider text-primary">
+            By the Numbers
+          </p>
+          <h2 className="mt-2 text-3xl font-bold tracking-tight text-foreground lg:text-4xl text-balance">
+            Built by pilots, growing fast
+          </h2>
+          <p className="mx-auto mt-3 max-w-lg text-muted-foreground leading-relaxed">
+            Real numbers from real usage. We{"'"}re in beta and already saving pilots time and money.
+          </p>
+        </div>
+
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {stats.map((s) => (
+            <div
+              key={s.label}
+              className="group flex flex-col items-center rounded-2xl border border-border bg-card p-8 text-center transition-all duration-300 hover:border-primary/30"
+            >
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                <s.icon className="h-5.5 w-5.5" />
               </div>
+              <p className="mt-5 font-mono text-3xl font-bold text-foreground lg:text-4xl">
+                {s.value}
+              </p>
+              <p className="mt-2 text-sm text-muted-foreground">{s.label}</p>
             </div>
-          </div>
-
-          {/* Text Side */}
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-wider text-primary">
-              Sell Your Aircraft
-            </p>
-            <h2 className="mt-2 text-3xl font-bold tracking-tight text-foreground lg:text-4xl text-balance">
-              Ready to Sell? We Make It Simple.
-            </h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
-              List your aircraft on the most trusted marketplace in aviation. Our dedicated sales team,
-              professional photography service, and marketing reach ensure maximum visibility for your listing.
-            </p>
-
-            <div className="mt-8 flex flex-col gap-4">
-              {benefits.map((b) => (
-                <div key={b.text} className="flex items-center gap-3">
-                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                    <b.icon className="h-4.5 w-4.5" />
-                  </div>
-                  <p className="text-sm font-medium text-foreground">{b.text}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Button
-                size="lg"
-                className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90"
-              >
-                List Your Aircraft
-                <ArrowRight className="h-4 w-4" />
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-border text-foreground hover:bg-secondary"
-              >
-                Get a Valuation
-              </Button>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

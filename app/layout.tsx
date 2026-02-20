@@ -7,8 +7,8 @@ const _inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const _jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains" });
 
 export const metadata: Metadata = {
-  title: 'SkyMarket - Premium Aircraft Listings',
-  description: 'Browse verified aircraft listings from trusted sellers. Find your next aircraft with confidence.',
+  title: 'AviationHub - Flight Planning, Fuel Prices & Aviation Tools',
+  description: 'Find cheap fuel, plan flights, manage your flying club, and track training. Built by pilots, for pilots.',
   generator: 'v0.app',
   icons: {
     icon: [

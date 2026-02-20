@@ -1,70 +1,73 @@
-import { ShieldCheck, FileSearch, Banknote, Headphones } from "lucide-react"
+import { Lock, Eye, Shield, Database } from "lucide-react"
 
-const features = [
+const trustItems = [
   {
-    icon: ShieldCheck,
-    title: "Verified Listings",
-    description:
-      "Every aircraft is inspected and verified by our team. We check logbooks, maintenance records, and airworthiness to give you peace of mind.",
+    icon: Lock,
+    title: "End-to-End Encrypted",
+    description: "Messages and sensitive data are encrypted. We store only encrypted blobs -- even we can't read them.",
   },
   {
-    icon: FileSearch,
-    title: "Transparent History",
-    description:
-      "Full access to maintenance logs, damage history, and ownership records. No surprises, just the facts you need to make informed decisions.",
+    icon: Eye,
+    title: "Your Plans Stay Private",
+    description: "Flight plans, routes, and personal data are never shared, sold, or used for advertising. Period.",
   },
   {
-    icon: Banknote,
-    title: "Secure Transactions",
-    description:
-      "Our escrow service protects both buyers and sellers. Funds are held securely until delivery is confirmed and the pre-buy is complete.",
+    icon: Shield,
+    title: "Community Fuel Prices",
+    description: "Fuel prices you share are public to help the community. Everything else is yours and yours alone.",
   },
   {
-    icon: Headphones,
-    title: "Concierge Support",
-    description:
-      "From search to close, our aviation specialists guide you through every step. Title transfer, insurance, and ferry flight coordination included.",
+    icon: Database,
+    title: "You Own Your Data",
+    description: "Export everything at any time. Delete your account and all data is permanently removed within 48 hours.",
   },
 ]
 
 export function WhySection() {
   return (
-    <section id="services" className="py-20 lg:py-28">
+    <section id="privacy" className="py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
-        <div className="text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-primary">
-            Why SkyMarket
-          </p>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-foreground lg:text-4xl text-balance">
-            The Trusted Way to Buy Aircraft
-          </h2>
-          <p className="mx-auto mt-3 max-w-lg text-muted-foreground leading-relaxed">
-            We have reimagined the aircraft buying experience from the ground up.
-          </p>
-        </div>
+        <div className="grid items-center gap-14 lg:grid-cols-2">
+          {/* Left: Message */}
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-wider text-primary">
+              Privacy & Trust
+            </p>
+            <h2 className="mt-2 text-3xl font-bold tracking-tight text-foreground lg:text-4xl text-balance">
+              Your data is yours. Full stop.
+            </h2>
+            <p className="mt-4 text-muted-foreground leading-relaxed">
+              We built AviationHub the way we{"'"}d want it as pilots ourselves:
+              private by default, transparent about what{"'"}s shared, and always in your control.
+            </p>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {features.map((feature, i) => (
-            <div
-              key={feature.title}
-              className="group relative flex flex-col rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:border-primary/40"
-            >
-              {/* Step Number */}
-              <span className="absolute right-5 top-4 font-mono text-5xl font-bold text-foreground/[0.04]">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                <feature.icon className="h-5 w-5" />
+            {/* Inline code-style trust badge */}
+            <div className="mt-8 inline-flex items-center gap-3 rounded-xl border border-primary/20 bg-primary/5 px-5 py-3">
+              <Lock className="h-5 w-5 text-primary" />
+              <div>
+                <p className="text-sm font-semibold text-foreground">Zero-knowledge architecture</p>
+                <p className="text-xs text-muted-foreground">
+                  We can{"'"}t read your data even if we wanted to
+                </p>
               </div>
-              <h3 className="mt-5 text-base font-semibold text-foreground">
-                {feature.title}
-              </h3>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                {feature.description}
-              </p>
             </div>
-          ))}
+          </div>
+
+          {/* Right: Trust Cards */}
+          <div className="grid gap-4 sm:grid-cols-2">
+            {trustItems.map((item, i) => (
+              <div
+                key={item.title}
+                className="group rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:border-primary/30"
+              >
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                  <item.icon className="h-5 w-5" />
+                </div>
+                <h3 className="mt-4 text-sm font-semibold text-foreground">{item.title}</h3>
+                <p className="mt-1.5 text-xs text-muted-foreground leading-relaxed">{item.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
