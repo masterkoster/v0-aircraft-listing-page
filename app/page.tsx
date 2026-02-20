@@ -1,54 +1,25 @@
-import { Navbar } from "@/components/aircraft/navbar"
-import { ImageGallery } from "@/components/aircraft/image-gallery"
-import { ListingHeader } from "@/components/aircraft/listing-header"
-import { QuickStats } from "@/components/aircraft/quick-stats"
-import { DescriptionSection } from "@/components/aircraft/description-section"
-import { EquipmentSection } from "@/components/aircraft/equipment-section"
-import { LocationCard } from "@/components/aircraft/location-card"
-import { ContactSection } from "@/components/aircraft/contact-section"
+import { LandingNavbar } from "@/components/landing/landing-navbar"
+import { HeroSection } from "@/components/landing/hero-section"
+import { FeaturedListings } from "@/components/landing/featured-listings"
+import { CategoriesSection } from "@/components/landing/categories-section"
+import { WhySection } from "@/components/landing/why-section"
+import { SellCtaSection } from "@/components/landing/sell-cta-section"
+import { TestimonialsSection } from "@/components/landing/testimonials-section"
+import { FooterSection } from "@/components/landing/footer-section"
 
-export default function AircraftListingPage() {
+export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
-
-      <main className="mx-auto max-w-7xl px-4 py-8 lg:px-8">
-        {/* Listing Header */}
-        <ListingHeader />
-
-        {/* Quick Stats Bar */}
-        <div className="mt-6">
-          <QuickStats />
-        </div>
-
-        {/* Two Column Layout */}
-        <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_360px]">
-          {/* Left Column */}
-          <div className="flex flex-col gap-8">
-            <ImageGallery />
-            <DescriptionSection />
-            <EquipmentSection />
-          </div>
-
-          {/* Right Column - Sticky Sidebar */}
-          <aside className="flex flex-col gap-6 lg:sticky lg:top-20 lg:self-start">
-            <ContactSection />
-            <LocationCard />
-          </aside>
-        </div>
+    <div className="min-h-screen bg-background text-foreground">
+      <LandingNavbar />
+      <main>
+        <HeroSection />
+        <FeaturedListings />
+        <CategoriesSection />
+        <WhySection />
+        <SellCtaSection />
+        <TestimonialsSection />
       </main>
-
-      {/* Footer */}
-      <footer className="mt-16 border-t border-border bg-card">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-6 lg:px-8">
-          <p className="text-xs text-muted-foreground">
-            SkyMarket - Premium Aircraft Marketplace
-          </p>
-          <p className="text-xs text-muted-foreground">
-            Listing #SKM-2026-04812
-          </p>
-        </div>
-      </footer>
+      <FooterSection />
     </div>
   )
 }
