@@ -6,10 +6,10 @@ import { Plane, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const navLinks = [
-  { label: "Buy", href: "#listings" },
-  { label: "Sell", href: "#sell" },
-  { label: "Services", href: "#services" },
-  { label: "About", href: "#about" },
+  { label: "Modules", href: "#modules" },
+  { label: "Pricing", href: "#pricing" },
+  { label: "Privacy", href: "#privacy" },
+  { label: "Marketplace", href: "/listing" },
 ]
 
 export function LandingNavbar() {
@@ -23,7 +23,7 @@ export function LandingNavbar() {
             <Plane className="h-4.5 w-4.5" />
           </div>
           <span className="text-base font-bold tracking-tight text-foreground">
-            SkyMarket
+            AviationHub
           </span>
         </Link>
 
@@ -45,7 +45,7 @@ export function LandingNavbar() {
             Log in
           </Button>
           <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
-            Get Started
+            Start Free
           </Button>
         </div>
 
@@ -78,7 +78,7 @@ export function LandingNavbar() {
                 Log in
               </Button>
               <Button size="sm" className="bg-primary text-primary-foreground">
-                Get Started
+                Start Free
               </Button>
             </div>
           </div>
